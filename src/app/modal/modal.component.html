@@ -1,0 +1,27 @@
+<mat-dialog-content>
+    <header>
+      <h1>Update Post</h1>
+    </header>
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Add Post</mat-label>
+        <input matInput placeholder="Post Title" name="updateNoteTitle" required [(ngModel)]="note.name" />
+        <mat-icon matSuffix>add</mat-icon>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Created Date</mat-label>
+        <input matInput [matDatepicker]="picker" name="updateCreatedDate" required [(ngModel)]="note.createdDate" />
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Post Content</mat-label>
+        <textarea matInput placeholder="Post Content" name="updateNoteTitle" required [(ngModel)]="note.content"></textarea>
+      </mat-form-field>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-raised-button color="primary" type="submit" (click)="submitUpdate()">Update</button>
+    <button mat-raised-button color="warn" mat-dialog-close>Cancle</button>
+  </mat-dialog-actions>
+  

@@ -1,0 +1,48 @@
+
+
+
+
+/* List styles */
+li {
+  display: inline-block;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  width: 100%;
+}
+
+/* Note name styles */
+a {
+  text-decoration: none;
+  color: black;
+}
+li span {
+  font-weight: bold;
+}
+
+
+/* jsdfnnc */
+.center-container {
+  margin-left: 10px;
+}
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button-container {
+  float: right;
+  display: flex;
+  gap: 10px;
+}
+
+
+
+

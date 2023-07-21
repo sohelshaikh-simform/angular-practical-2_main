@@ -1,0 +1,55 @@
+<div class="container">
+  <form #postForm="ngForm">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          Add Post
+        </mat-card-title>
+      </mat-card-header>
+      <br>
+      <mat-card-content>
+        <div class="row">
+          <mat-form-field appearance="outline">
+            <mat-label>Add Post</mat-label>
+            <input matInput placeholder="Post Title" name="noteTitle" required [(ngModel)]="noteService.name">
+            
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Created Date</mat-label>
+            <input matInput [matDatepicker]="picker" name="createdDate" required [(ngModel)]="noteService.date">
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Post Content</mat-label>
+            <textarea matInput name="note" required [(ngModel)]="noteService.note"></textarea>
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <div class="center-container">
+          <button (click)="addNote()" mat-raised-button color="primary" [disabled]="postForm.invalid">Add New Post <mat-icon matSuffix>add</mat-icon></button>
+        </div>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+
+  <br /><br />
+
+  <hr>
+  <h1>Notes List</h1>
+  <hr>
+
+  <mat-list>
+    <div *ngFor="let note of notes">
+      <mat-list-item class="list-item">
+        <a [routerLink]="note.id">{{ note.name }}</a>
+        <div class="button-container">
+          <button mat-raised-button color="warn" (click)="deleteNote(note)">Delete Note</button>
+          <button mat-raised-button color="accent" (click)="openDialog(note)">Update Note</button>
+        </div>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+    </div>
+  </mat-list>
+</div>

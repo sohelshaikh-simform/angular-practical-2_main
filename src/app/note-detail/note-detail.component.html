@@ -1,0 +1,11 @@
+<mat-card class="note-card">
+  <mat-card-header class="card-header">
+    <mat-card-title class="note-title">
+      {{ note.name }}
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="card-body">
+    <p><b>Created Date:</b> {{ note.createdDate | date }}</p>
+    <p  class="note-content"><b>Note:</b> {{ note.content }}</p>
+  </mat-card-content>
+</mat-card>
